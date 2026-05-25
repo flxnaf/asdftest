@@ -19,10 +19,10 @@ const cols = [
     ],
   },
   {
-    title: "Partners",
+    title: "Get in touch",
     links: [
-      ["Partner login", "#/login"],
       ["Submit a case", "#contact"],
+      ["Email us", "mailto:hello@aline.tech"],
     ],
   },
 ];
