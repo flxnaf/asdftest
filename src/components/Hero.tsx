@@ -1,4 +1,4 @@
-import { ArrowRight, ShieldCheck, Clock4 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Placeholder from "./Placeholder";
 
 export default function Hero() {
@@ -32,20 +32,6 @@ export default function Hero() {
               >
                 See how it works
               </a>
-            </div>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[12.5px] text-ink-500">
-              <div className="inline-flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-mint-500" />
-                Orthodontist-reviewed on every case
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <Clock4 className="w-4 h-4 text-mint-500" />
-                48–72 hour standard turnaround
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-mint-500" />
-                White-label by default
-              </div>
             </div>
           </div>
 

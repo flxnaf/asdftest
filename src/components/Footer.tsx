@@ -8,7 +8,6 @@ const cols = [
       ["Technology", "#technology"],
       ["Services", "#services"],
       ["Case library", "#cases"],
-      ["White-label portal", "#contact"],
     ],
   },
   {
@@ -16,19 +15,14 @@ const cols = [
     links: [
       ["Clinical leadership", "#team"],
       ["Compliance & security", "#compliance"],
-      ["Careers", "#"],
-      ["Press", "#"],
       ["Contact", "#contact"],
     ],
   },
   {
-    title: "Resources",
+    title: "Partners",
     links: [
-      ["Partner portal", "#contact"],
-      ["Submission guide", "#"],
-      ["Clinical reference", "#"],
-      ["DPA template (NDA)", "#"],
-      ["Status", "#"],
+      ["Partner login", "#/login"],
+      ["Submit a case", "#contact"],
     ],
   },
 ];
@@ -41,25 +35,9 @@ export default function Footer() {
           <div>
             <Logo variant="light" />
             <p className="mt-5 text-[13.5px] leading-[1.65] text-ink-300 max-w-sm">
-              Clear aligner treatment-planning, designed in Hong Kong for the world's
-              labs and clinics. Design only. No manufacturing. Your brand stays front.
+              Clear aligner treatment-planning, designed in Hong Kong for labs and
+              clinics. Design only. No manufacturing. Your brand stays front.
             </p>
-            <div className="mt-8 flex items-center gap-3">
-              {[
-                { label: "ISO 13485", icon: "ISO" },
-                { label: "HIPAA-aligned", icon: "HIPAA" },
-                { label: "GDPR", icon: "GDPR" },
-                { label: "PDPO HK", icon: "PDPO" },
-              ].map((b) => (
-                <span
-                  key={b.label}
-                  className="text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-md border border-white/10 text-ink-200"
-                  title={b.label}
-                >
-                  {b.icon}
-                </span>
-              ))}
-            </div>
           </div>
           <div className="grid grid-cols-3 gap-6">
             {cols.map((c) => (
@@ -86,13 +64,11 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[12px] text-ink-400">
           <div>
-            © {new Date().getFullYear()} A Line Technologies Limited. Registered in Hong Kong.
+            © {new Date().getFullYear()} A Line Technologies Limited.
           </div>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-white">Privacy</a>
             <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Sub-processors</a>
-            <a href="#" className="hover:text-white">Responsible disclosure</a>
           </div>
         </div>
 

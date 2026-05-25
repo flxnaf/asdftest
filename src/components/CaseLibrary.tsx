@@ -11,18 +11,19 @@ type Case = {
   tags: string[];
 };
 
+/**
+ * Replace with real anonymised case data before launch. Each case shown here
+ * implies the company has actually planned it — keep this set to representative
+ * examples, not invented cases.
+ */
 const cases: Case[] = [
-  { id: "AL-204711", diagnosis: "Anterior crowding · Class I", complexity: "Moderate", stages: 32, months: 9.5, ipr: "3.4 mm total", attachments: 6, tags: ["Crowding", "Class I"] },
-  { id: "AL-198320", diagnosis: "Spacing · midline diastema", complexity: "Mild", stages: 18, months: 5.0, ipr: "0 mm", attachments: 2, tags: ["Spacing"] },
-  { id: "AL-211056", diagnosis: "Deep bite · 5 mm overbite", complexity: "Complex", stages: 44, months: 13.0, ipr: "2.1 mm", attachments: 10, tags: ["Deep bite"] },
-  { id: "AL-220914", diagnosis: "Anterior crossbite · UR1", complexity: "Moderate", stages: 26, months: 7.5, ipr: "1.2 mm", attachments: 5, tags: ["Crossbite"] },
-  { id: "AL-225608", diagnosis: "Class II div 1 · mild", complexity: "Moderate", stages: 38, months: 11.0, ipr: "2.8 mm", attachments: 8, tags: ["Class II"] },
-  { id: "AL-231209", diagnosis: "Open bite · anterior", complexity: "Complex", stages: 42, months: 12.5, ipr: "1.6 mm", attachments: 9, tags: ["Open bite"] },
-  { id: "AL-237015", diagnosis: "Relapse re-treatment", complexity: "Mild", stages: 14, months: 4.0, ipr: "0.8 mm", attachments: 3, tags: ["Refinement"] },
-  { id: "AL-240388", diagnosis: "Crowding + rotation cluster", complexity: "Complex", stages: 36, months: 10.5, ipr: "4.0 mm", attachments: 8, tags: ["Crowding", "Rotations"] },
+  { id: "Case 01", diagnosis: "[Diagnosis]", complexity: "Mild", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tags: ["Crowding"] },
+  { id: "Case 02", diagnosis: "[Diagnosis]", complexity: "Moderate", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tags: ["Spacing"] },
+  { id: "Case 03", diagnosis: "[Diagnosis]", complexity: "Complex", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tags: ["Deep bite"] },
+  { id: "Case 04", diagnosis: "[Diagnosis]", complexity: "Moderate", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tags: ["Refinement"] },
 ];
 
-const filters = ["All", "Crowding", "Spacing", "Deep bite", "Class II", "Open bite", "Crossbite", "Refinement"];
+const filters = ["All", "Crowding", "Spacing", "Deep bite", "Refinement"];
 
 const complexityStyle = {
   Mild: "bg-mint-100 text-mint-500",

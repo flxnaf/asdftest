@@ -86,15 +86,7 @@ export default function Technology() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {[
-                "3Shape Clear Aligner Studio",
-                "Maestro 3D",
-                "ArchForm",
-                "Blue Sky Plan",
-                "Nemocast",
-                "DentOne",
-                "Universal STL",
-              ].map((s) => (
+              {["[Platform 1]", "[Platform 2]", "[Platform 3]", "Universal STL"].map((s) => (
                 <span
                   key={s}
                   className="text-[12px] font-medium px-3 py-1.5 rounded-md border border-white/15 text-ink-100 bg-white/[0.04]"

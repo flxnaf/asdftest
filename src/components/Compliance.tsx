@@ -1,21 +1,16 @@
-import { ShieldCheck, Lock, FileBadge, Scale, ClipboardCheck, Globe2 } from "lucide-react";
+import { Lock, FileBadge, Scale, ClipboardCheck, Globe2, ShieldCheck } from "lucide-react";
 
-const certs = [
-  { abbr: "ISO 13485:2016", title: "Medical Device QMS", note: "Quality management aligned for medical device design workflows." },
-  { abbr: "HIPAA-aligned", title: "PHI handling", note: "All patient data handled under HIPAA-aligned safeguards, audited annually." },
-  { abbr: "GDPR", title: "EU data protection", note: "Data processing agreements for EU partner labs and clinics." },
-  { abbr: "PDPO (HK)", title: "Hong Kong PDPO", note: "Compliant with the Hong Kong Personal Data (Privacy) Ordinance." },
-  { abbr: "SOC 2 (in progress)", title: "Security controls", note: "Type I audit scheduled Q4. Type II target H1 next year." },
-  { abbr: "MD Software (Class I)", title: "Risk classification", note: "Planning software classified per IMDRF SaMD guidance." },
-];
-
+/**
+ * Each promise below is a claim the company is making about its operating
+ * posture. Confirm each is accurate (or remove it) before publishing.
+ */
 const promises = [
   { icon: Lock, title: "Encrypted in transit and at rest", body: "AES-256 at rest, TLS 1.3 in transit. Patient identifiers separated from clinical data." },
   { icon: FileBadge, title: "Audit trail on every case", body: "Every clinical action — segmentation edit, stage adjustment, sign-off — is logged with operator and timestamp." },
   { icon: Scale, title: "DPA & BAA on request", body: "Standard Data Processing Agreement and Business Associate Agreement available for partner onboarding." },
   { icon: ClipboardCheck, title: "Orthodontist sign-off required", body: "No setup is released to a partner without a named, licensed orthodontist's review signature." },
-  { icon: Globe2, title: "Data residency options", body: "Choose APAC (Hong Kong / Singapore) or EU (Frankfurt) hosting on enterprise plans." },
-  { icon: ShieldCheck, title: "Penetration tested annually", body: "External pen test by an independent firm; remediation tracked and re-tested." },
+  { icon: Globe2, title: "Data residency options", body: "APAC and EU hosting options for partners with regional data-residency requirements." },
+  { icon: ShieldCheck, title: "Independent security testing", body: "External penetration testing on an annual cadence; remediation tracked and re-tested." },
 ];
 
 export default function Compliance() {
@@ -36,25 +31,6 @@ export default function Compliance() {
           </p>
         </div>
 
-        {/* Cert grid */}
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-3">
-          {certs.map((c) => (
-            <div
-              key={c.abbr}
-              className="rounded-xl border border-white/10 bg-white/[0.03] p-5 hover:bg-white/[0.06] transition-colors"
-            >
-              <div className="text-[12px] font-semibold tracking-widest uppercase text-mint-300">
-                {c.abbr}
-              </div>
-              <div className="mt-2 text-[14px] font-medium">{c.title}</div>
-              <div className="mt-1.5 text-[12.5px] text-ink-300 leading-snug">
-                {c.note}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Promises */}
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
           {promises.map((p) => (
             <div key={p.title} className="flex gap-4">
@@ -67,10 +43,10 @@ export default function Compliance() {
           ))}
         </div>
 
-        <p className="mt-12 text-[11px] text-ink-400 max-w-3xl">
-          Certifications and audit status reflect current operating posture. Documentation
-          (ISO certificate, DPA template, penetration test executive summary, sub-processor
-          list) available to qualified partners under NDA.
+        <p className="mt-12 text-[12px] text-ink-300 max-w-3xl">
+          Full compliance documentation — including data processing agreements,
+          sub-processor list, and security questionnaire responses — available to
+          qualified partners under NDA.
         </p>
       </div>
     </section>
