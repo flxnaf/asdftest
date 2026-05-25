@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Banner from "./components/Banner";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Partner from "./components/Partner";
@@ -38,6 +39,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-ink-900">
+      <Banner />
       <Nav />
       <main>
         <Hero />

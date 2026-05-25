@@ -1,13 +1,16 @@
 import { ArrowRight } from "lucide-react";
-import Placeholder from "./Placeholder";
+import HeroVisual from "./HeroVisual";
 import { useLang } from "../i18n/LangContext";
+
+// Flip to true once /public/demo-3d.mp4 has been added
+const HAS_DEMO_VIDEO = false;
 
 export default function Hero() {
   const { t } = useLang();
   return (
     <section
       id="top"
-      className="relative pt-32 lg:pt-40 pb-24 lg:pb-28 bg-white"
+      className="relative pt-12 lg:pt-20 pb-24 lg:pb-28 bg-white"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid lg:grid-cols-[1.05fr,1fr] gap-12 lg:gap-16 items-center">
@@ -35,12 +38,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <Placeholder
-            label={t.hero.placeholderLabel}
-            hint={t.hero.placeholderHint}
-            spec={t.hero.placeholderSpec}
-            aspect="aspect-[4/3]"
-          />
+          <HeroVisual hasVideo={HAS_DEMO_VIDEO} />
         </div>
       </div>
     </section>
