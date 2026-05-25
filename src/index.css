@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Brand: navy from logo wordmark, teal from logo tooth */
+  --color-ink-950: #050d1c;
+  --color-ink-900: #0c1f3a;
+  --color-ink-800: #0f2a4a;
+  --color-ink-700: #1c3d63;
+  --color-ink-600: #2e5179;
+  --color-ink-500: #4e6889;
+  --color-ink-400: #748399;
+  --color-ink-300: #9fadbf;
+  --color-ink-200: #cdd6e1;
+  --color-ink-100: #e3e9f0;
+  --color-ink-50: #f3f6fa;
+
+  --color-mint-500: #3fb8b0;
+  --color-mint-400: #5cc6bf;
+  --color-mint-300: #7dd5cf;
+  --color-mint-100: #d6f0ee;
+
+  --color-sky-accent: #4f8ef7;
+
+  --color-bone: #fafaf7;
+  --color-paper: #ffffff;
+}
+
+html,
+body,
+#root {
+  background: var(--color-paper);
+  color: var(--color-ink-800);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+}
+
+/* Subtle dotted grid used in hero & section dividers */
+.bg-grid {
+  background-image: radial-gradient(rgba(10, 37, 64, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-grid-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Section eyebrow — short teal underline + uppercase label (iTero pattern) */
+.eyebrow {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-700);
+}
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--color-mint-500);
+  margin-bottom: 14px;
+}
+.eyebrow-mint,
+.eyebrow-mint::before {
+  color: var(--color-mint-500);
+}
+
+/* Tabular numbers used for case IDs, stats, etc. — replaces mono font */
+.nums {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Placeholder block — clearly marks images that need to be supplied */
+.placeholder {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(15, 42, 74, 0.025),
+      rgba(15, 42, 74, 0.025) 12px,
+      rgba(15, 42, 74, 0.05) 12px,
+      rgba(15, 42, 74, 0.05) 24px
+    ),
+    var(--color-ink-50);
+  border: 1.5px dashed var(--color-ink-200);
+  color: var(--color-ink-500);
+}
+.placeholder-dark {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.025) 12px,
+      rgba(255, 255, 255, 0.05) 12px,
+      rgba(255, 255, 255, 0.05) 24px
+    ),
+    rgba(255, 255, 255, 0.02);
+  border: 1.5px dashed rgba(255, 255, 255, 0.18);
+  color: var(--color-ink-300);
+}
