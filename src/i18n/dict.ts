@@ -27,16 +27,6 @@ export const en = {
     body: "Our treatment plans are used clinically by Beame Medical Tech, a Hong Kong clear-aligner brand. Beame's clinicians prescribe, fit, and monitor — we design the plans they execute.",
     cta: "Learn more about Beame →",
   },
-  stats: {
-    items: [
-      { v: "[XX]k+", l: "Treatment plans designed", n: "Cumulative since [year founded]" },
-      { v: "[XX]", l: "Partner clinics & labs", n: "[Regions]" },
-      { v: "[XX] hr", l: "Standard turnaround", n: "Express track at [XX] hr" },
-      { v: "[XX]%", l: "First-revision approval", n: "[Time window]" },
-    ],
-    footnote:
-      "Replace bracketed values with real figures in Stats.tsx. Any number on the live site should be defensible.",
-  },
   process: {
     eyebrow: "Workflow",
     headline: "From scan to print-ready, four steps.",
@@ -219,16 +209,6 @@ export const zh: typeof en = {
     headline: "為 Beame Medical Tech 設計的治療方案。",
     body: "我們的治療方案由本港隱形牙箍品牌 Beame Medical Tech 臨床使用。Beame 的醫生負責處方、配戴及監察，我們負責設計他們執行的治療方案。",
     cta: "了解更多關於 Beame →",
-  },
-  stats: {
-    items: [
-      { v: "[XX]k+", l: "設計治療方案數量", n: "[成立年份] 起累計" },
-      { v: "[XX]", l: "合作診所與實驗室", n: "[地區]" },
-      { v: "[XX] 小時", l: "標準交付時間", n: "急件 [XX] 小時內" },
-      { v: "[XX]%", l: "首版方案通過率", n: "[統計期間]" },
-    ],
-    footnote:
-      "請於 Stats.tsx 將方括號內的數字替換為實際數據。任何公開展示的數字均應有據可查。",
   },
   process: {
     eyebrow: "工作流程",
