@@ -9,6 +9,7 @@ import CaseLibrary from "./components/CaseLibrary";
 import Team from "./components/Team";
 import WhiteLabel from "./components/WhiteLabel";
 import Compliance from "./components/Compliance";
+import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import LoginPage from "./components/LoginPage";
@@ -48,6 +49,7 @@ export default function App() {
         <Team />
         <WhiteLabel />
         <Compliance />
+        <FAQ />
         <CTA />
       </main>
       <Footer />

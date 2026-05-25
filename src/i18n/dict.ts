@@ -122,6 +122,41 @@ process: {
     footnote:
       "Full compliance documentation — including data processing agreements, sub-processor list, and security questionnaire responses — available to qualified partners under NDA.",
   },
+  faq: {
+    eyebrow: "FAQ",
+    heading: "Frequently asked questions",
+    items: [
+      {
+        q: "What exactly do you design?",
+        a: "Clear aligner treatment plans — diagnosis, staging, attachments, IPR schedule, and printable STL files for each stage. We do not manufacture the aligners themselves. That separation keeps your supply chain in your control and ours focused on clinical design.",
+      },
+      {
+        q: "What CAD software do you support?",
+        a: "Our deliverables are universal STL stages that work with any 3D printing workflow. We can also deliver in the planning platform your team already uses — tell us during onboarding if you have a specific requirement.",
+      },
+      {
+        q: "How long does a plan take?",
+        a: "Standard turnaround is two business days from a complete submission. Express is one business day. Complex cases — skeletal discrepancies, surgical interfaces, multi-arch coordination — are flagged for escalation and may take longer; we tell you upfront, not after the fact.",
+      },
+      {
+        q: "Can you deliver under our brand?",
+        a: "Yes, by default. Plan PDFs, 3D viewer links, and any other partner-facing artefact carry your logo, palette, and copy. Your patients and your clinicians will not see our name.",
+      },
+      {
+        q: "What if a plan needs adjustments after delivery?",
+        a: "Revisions are included. If a plan needs adjusting before printing, send the feedback and we will re-issue. Mid-course corrections after the patient has started are also supported — we re-scan, re-stage, and issue a delta report showing what tracked versus what did not.",
+      },
+      {
+        q: "How is patient data handled?",
+        a: "Patient identifiers are separated from clinical data; everything is encrypted in transit (TLS 1.3) and at rest (AES-256). Every clinical action is logged. Data Processing Agreements are available on request. Full detail in the Compliance section above.",
+      },
+      {
+        q: "What does onboarding look like?",
+        a: "Submit a test case from your recent work — we plan it free, no commitment. Compare what we deliver to what you would have produced internally. If you are satisfied, we set up your partner account and ramp from there.",
+      },
+    ],
+    moreCta: "Have other questions? Talk to us →",
+  },
   cta: {
     eyebrow: "Get started",
     headline: "Send us a real case. We'll plan it free.",
@@ -297,6 +332,41 @@ process: {
     ],
     footnote:
       "完整合規文件 — 包括資料處理協議、子處理者清單及保安問卷回應 — 可在簽署保密協議後向合資格合作夥伴提供。",
+  },
+  faq: {
+    eyebrow: "常見問題",
+    heading: "常見問題",
+    items: [
+      {
+        q: "你們具體設計甚麼？",
+        a: "隱形牙箍治療方案 — 包括診斷、分階段、附件、IPR 安排，以及每個階段的可列印 STL 檔案。我們本身不製造牙箍。這種分工讓您保留供應鏈控制權，而我們則專注於臨床設計品質。",
+      },
+      {
+        q: "你們支援哪些 CAD 軟件？",
+        a: "我們交付的是通用 STL 分階段檔案，可配合任何 3D 列印流程。如有需要，亦可以您團隊現有的規劃平台格式交付 — 開戶時告知我們即可。",
+      },
+      {
+        q: "完成一份方案需時多久？",
+        a: "由完成提交起計，標準交付時間為兩個工作天。急件為一個工作天。複雜個案 — 例如骨骼差異、外科矯齒介面、多牙弓協調 — 會被標示為需轉介，可能需更長時間；我們會提前告知，而非事後才講。",
+      },
+      {
+        q: "可以用我們的品牌交付嗎？",
+        a: "預設如此。方案 PDF、3D 檢視器連結，以及任何面向合作夥伴的成品，均會以您的標誌、色系及文案呈現。您的病人及臨床人員不會看見我們的名字。",
+      },
+      {
+        q: "如方案在交付後需要調整怎辦？",
+        a: "修訂均包括在內。若方案在列印前需要調整，將回饋發送給我們，我們會重新發出。病人開始治療後的中期調整亦同樣支援 — 重新掃描、重新分階段，並提供追蹤偏差報告，顯示與預期相符及不符的部分。",
+      },
+      {
+        q: "你們如何處理病人資料？",
+        a: "病人識別資料與臨床資料分開儲存；所有資料於傳輸時（TLS 1.3）及靜態（AES-256）均經加密。每項臨床操作均有記錄。可應要求提供資料處理協議。詳情請參閱上方的合規部分。",
+      },
+      {
+        q: "開戶流程是怎樣的？",
+        a: "從您近期處理過的個案中挑一個提交給我們 — 我們免費規劃，無任何承諾。比較我們的成果與您內部會做出的成果。若您滿意，我們便為您設立合作夥伴帳戶，再逐步擴大合作。",
+      },
+    ],
+    moreCta: "還有其他問題？與我們聯絡 →",
   },
   cta: {
     eyebrow: "開始合作",
