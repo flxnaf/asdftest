@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Banner from "./components/Banner";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import Partner from "./components/Partner";
 import Process from "./components/Process";
 import Technology from "./components/Technology";
 import Services from "./components/Services";
@@ -42,7 +41,6 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Partner />
         <Process />
         <Technology />
         <Services />

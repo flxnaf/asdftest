@@ -21,13 +21,7 @@ export const en = {
       "Screenshot or render of a treatment-planning software view — e.g. occlusal 3D arch with movement plan side panel, or a clinician at a workstation.",
     placeholderSpec: "1200 × 900 · WebP or PNG · save to /public/hero.png",
   },
-  partner: {
-    eyebrow: "Clinical partner",
-    headline: "Plans designed for Beame Medical Tech.",
-    body: "Our treatment plans are used clinically by Beame Medical Tech, a Hong Kong clear-aligner brand. Beame's clinicians prescribe, fit, and monitor — we design the plans they execute.",
-    cta: "Learn more about Beame →",
-  },
-  process: {
+process: {
     eyebrow: "Workflow",
     headline: "From scan to print-ready, four steps.",
     sub: "No phone tag, no chasing files — just a clinician-reviewed plan, delivered under your brand.",
@@ -204,13 +198,7 @@ export const zh: typeof en = {
       "治療方案設計軟件的截圖或渲染圖 — 例如 3D 咬合視圖配側欄移動方案，或臨床人員操作的場景。",
     placeholderSpec: "1200 × 900 · WebP 或 PNG · 儲存至 /public/hero.png",
   },
-  partner: {
-    eyebrow: "臨床合作夥伴",
-    headline: "為 Beame Medical Tech 設計的治療方案。",
-    body: "我們的治療方案由本港隱形牙箍品牌 Beame Medical Tech 臨床使用。Beame 的醫生負責處方、配戴及監察，我們負責設計他們執行的治療方案。",
-    cta: "了解更多關於 Beame →",
-  },
-  process: {
+process: {
     eyebrow: "工作流程",
     headline: "從口腔掃描到可列印方案，四個步驟。",
     sub: "免去電話追蹤、檔案來回 — 您只會收到一份由臨床醫生審核、以您品牌呈現的治療方案。",
