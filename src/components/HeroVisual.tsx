@@ -16,9 +16,9 @@ export default function HeroVisual({ hasVideo = false }: Props) {
 
   if (hasVideo) {
     return (
-      <div className="relative rounded-xl overflow-hidden border border-ink-100 bg-ink-900 aspect-[4/3]">
+      <div className="relative rounded-xl overflow-hidden border border-ink-100 bg-ink-900">
         <video
-          className="w-full h-full object-cover"
+          className="w-full h-auto block"
           src={VIDEO_SRC}
           poster={POSTER_SRC}
           autoPlay
