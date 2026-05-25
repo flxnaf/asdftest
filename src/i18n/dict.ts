@@ -158,16 +158,12 @@ export const en = {
   footer: {
     tagline:
       "Clear aligner treatment-planning, designed in Hong Kong for labs and clinics. Design only. No manufacturing. Your brand stays front.",
-    cols: [
-      { title: "Service", links: [["How it works", "#process"], ["Technology", "#technology"], ["Services", "#services"], ["Case library", "#cases"]] },
-      { title: "Company", links: [["Clinical leadership", "#team"], ["Compliance & security", "#compliance"], ["Contact", "#contact"]] },
-      { title: "Get in touch", links: [["Submit a case", "#contact"], ["Email us", "mailto:hello@aline.tech"]] },
-    ],
+    contactLabel: "Get in touch",
+    submitCase: "Submit a case",
+    emailUs: "hello@aline.tech",
     copyright: "A Line Technologies Limited.",
-    privacy: "Privacy",
-    terms: "Terms",
     disclaimer:
-      "A Line Technologies provides clear aligner treatment-planning design services to dental laboratories, orthodontic clinics, and aligner brands. We do not manufacture aligners. We are not a clinical practice and do not provide orthodontic care directly to patients. All clinical decision-making remains the responsibility of the treating clinician. Trademarks and brand names referenced for software interoperability remain the property of their respective owners.",
+      "A Line Technologies provides clear aligner treatment-planning design services to dental laboratories, orthodontic clinics, and aligner brands. We do not manufacture aligners. We are not a clinical practice and do not provide orthodontic care directly to patients. All clinical decision-making remains the responsibility of the treating clinician.",
   },
   login: {
     heading: "Partner sign-in",
@@ -354,16 +350,12 @@ export const zh: typeof en = {
   footer: {
     tagline:
       "於香港為實驗室及診所設計的隱形牙箍治療方案。只做設計，不做製造，品牌始終是您的。",
-    cols: [
-      { title: "服務", links: [["工作流程", "#process"], ["技術", "#technology"], ["服務內容", "#services"], ["案例庫", "#cases"]] },
-      { title: "公司", links: [["臨床領導", "#team"], ["合規與資訊保安", "#compliance"], ["聯絡我們", "#contact"]] },
-      { title: "聯絡我們", links: [["提交個案", "#contact"], ["電郵聯絡", "mailto:hello@aline.tech"]] },
-    ],
+    contactLabel: "聯絡我們",
+    submitCase: "提交個案",
+    emailUs: "hello@aline.tech",
     copyright: "A Line Technologies Limited.",
-    privacy: "私隱政策",
-    terms: "服務條款",
     disclaimer:
-      "A Line Technologies 為牙科實驗室、矯齒診所及隱形牙箍品牌提供治療方案設計服務。本公司不製造隱形牙箍，亦非臨床機構，不直接向病人提供矯齒治療。所有臨床決定仍由負責治療的臨床醫生承擔。文中提及之軟件相容品牌及商標屬其各自擁有者所有。",
+      "A Line Technologies 為牙科實驗室、矯齒診所及隱形牙箍品牌提供治療方案設計服務。本公司不製造隱形牙箍，亦非臨床機構，不直接向病人提供矯齒治療。所有臨床決定仍由負責治療的臨床醫生承擔。",
   },
   login: {
     heading: "合作夥伴登入",
