@@ -2,24 +2,6 @@ import { useState } from "react";
 import { useLang } from "../i18n/LangContext";
 
 type Complexity = "Mild" | "Moderate" | "Complex";
-type Case = {
-  id: string;
-  complexity: Complexity;
-  stages: number;
-  months: number;
-  ipr: string;
-  attachments: number;
-  tagKey: string;
-};
-
-const cases: Case[] = [
-  { id: "Case 01", complexity: "Mild", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tagKey: "Crowding" },
-  { id: "Case 02", complexity: "Moderate", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tagKey: "Spacing" },
-  { id: "Case 03", complexity: "Complex", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tagKey: "Deep bite" },
-  { id: "Case 04", complexity: "Moderate", stages: 0, months: 0, ipr: "[mm]", attachments: 0, tagKey: "Refinement" },
-];
-
-const filterTagKeys = ["All", "Crowding", "Spacing", "Deep bite", "Refinement"];
 
 const complexityStyle: Record<Complexity, string> = {
   Mild: "bg-mint-100 text-mint-500",
@@ -27,15 +9,15 @@ const complexityStyle: Record<Complexity, string> = {
   Complex: "bg-ink-900 text-mint-300",
 };
 
-const filterLabels = {
-  en: { All: "All", Crowding: "Crowding", Spacing: "Spacing", "Deep bite": "Deep bite", Refinement: "Refinement" },
-  zh: { All: "全部", Crowding: "擠迫", Spacing: "牙縫", "Deep bite": "深咬", Refinement: "中期調整" },
-} as const;
+// Maps localized filter labels (position-aligned) to the canonical English
+// tagKey used on each case. Same index across EN and ZH filter arrays.
+const filterTagKeys = [null, "Crowding", "Spacing", "Deep bite", "Class II", "Open bite", "Crossbite", "Refinement"];
 
 export default function CaseLibrary() {
-  const { t, lang } = useLang();
-  const [active, setActive] = useState("All");
-  const filtered = active === "All" ? cases : cases.filter((c) => c.tagKey === active);
+  const { t } = useLang();
+  const [activeIdx, setActiveIdx] = useState(0);
+  const activeKey = filterTagKeys[activeIdx];
+  const filtered = activeKey === null ? t.cases.items : t.cases.items.filter((c) => c.tagKey === activeKey);
 
   return (
     <section id="cases" className="bg-bone border-y border-ink-100">
@@ -59,17 +41,17 @@ export default function CaseLibrary() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-2">
-          {filterTagKeys.map((f) => (
+          {t.cases.filters.map((label, i) => (
             <button
-              key={f}
-              onClick={() => setActive(f)}
+              key={label}
+              onClick={() => setActiveIdx(i)}
               className={`text-[12.5px] px-3 py-1.5 rounded-md border transition-colors ${
-                active === f
+                activeIdx === i
                   ? "bg-ink-900 text-white border-ink-900"
                   : "bg-white text-ink-600 border-ink-200 hover:border-ink-300"
               }`}
             >
-              {filterLabels[lang][f as keyof typeof filterLabels.en]}
+              {label}
             </button>
           ))}
         </div>
@@ -85,13 +67,13 @@ export default function CaseLibrary() {
                   {c.id}
                 </span>
                 <span
-                  className={`text-[10px] font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded-md ${complexityStyle[c.complexity]}`}
+                  className={`text-[10px] font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded-md ${complexityStyle[c.complexity as Complexity]}`}
                 >
-                  {t.cases.complexity[c.complexity]}
+                  {t.cases.complexity[c.complexity as Complexity]}
                 </span>
               </div>
               <div className="mt-4 text-[14px] font-semibold text-ink-900 leading-snug min-h-[2.6em]">
-                {t.cases.diagnosis}
+                {c.diagnosis}
               </div>
               <dl className="mt-4 pt-4 border-t border-ink-100 grid grid-cols-2 gap-y-2 text-[12px] nums">
                 <dt className="text-ink-400">{t.cases.fields.stages}</dt>
