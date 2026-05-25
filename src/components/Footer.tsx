@@ -1,33 +1,8 @@
 import Logo from "./Logo";
-
-const cols = [
-  {
-    title: "Service",
-    links: [
-      ["How it works", "#process"],
-      ["Technology", "#technology"],
-      ["Services", "#services"],
-      ["Case library", "#cases"],
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      ["Clinical leadership", "#team"],
-      ["Compliance & security", "#compliance"],
-      ["Contact", "#contact"],
-    ],
-  },
-  {
-    title: "Get in touch",
-    links: [
-      ["Submit a case", "#contact"],
-      ["Email us", "mailto:hello@aline.tech"],
-    ],
-  },
-];
+import { useLang } from "../i18n/LangContext";
 
 export default function Footer() {
+  const { t } = useLang();
   return (
     <footer className="bg-ink-950 text-ink-300">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-10">
@@ -35,12 +10,11 @@ export default function Footer() {
           <div>
             <Logo variant="light" />
             <p className="mt-5 text-[13.5px] leading-[1.65] text-ink-300 max-w-sm">
-              Clear aligner treatment-planning, designed in Hong Kong for labs and
-              clinics. Design only. No manufacturing. Your brand stays front.
+              {t.footer.tagline}
             </p>
           </div>
           <div className="grid grid-cols-3 gap-6">
-            {cols.map((c) => (
+            {t.footer.cols.map((c) => (
               <div key={c.title}>
                 <div className="text-[11px] font-semibold tracking-[0.18em] text-mint-300 uppercase">
                   {c.title}
@@ -64,22 +38,16 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[12px] text-ink-400">
           <div>
-            © {new Date().getFullYear()} A Line Technologies Limited.
+            © {new Date().getFullYear()} {t.footer.copyright}
           </div>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
+            <a href="#" className="hover:text-white">{t.footer.privacy}</a>
+            <a href="#" className="hover:text-white">{t.footer.terms}</a>
           </div>
         </div>
 
         <p className="mt-8 text-[10.5px] text-ink-400 max-w-4xl leading-[1.6]">
-          A Line Technologies provides clear aligner treatment-planning design services
-          to dental laboratories, orthodontic clinics, and aligner brands. We do not
-          manufacture aligners. We are not a clinical practice and do not provide
-          orthodontic care directly to patients. All clinical decision-making remains
-          the responsibility of the treating clinician. Trademarks and brand names
-          referenced for software interoperability remain the property of their
-          respective owners.
+          {t.footer.disclaimer}
         </p>
       </div>
     </footer>

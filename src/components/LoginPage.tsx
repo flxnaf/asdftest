@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Logo from "./Logo";
+import LangToggle from "./LangToggle";
+import { useLang } from "../i18n/LangContext";
 
 export default function LoginPage() {
+  const { t } = useLang();
   const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [showError, setShowError] = useState(false);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
+    setShowError(false);
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      setError(
-        "We couldn't find an account for that email. Partner access is by invitation."
-      );
+      setShowError(true);
     }, 600);
   };
 
@@ -24,19 +25,19 @@ export default function LoginPage() {
     <div className="min-h-screen grid lg:grid-cols-[1fr,1.1fr] bg-white">
       {/* Form side */}
       <div className="flex flex-col px-6 lg:px-16 py-10">
-        <a href="#/" className="self-start">
-          <Logo />
-        </a>
+        <div className="flex items-center justify-between">
+          <a href="#/">
+            <Logo />
+          </a>
+          <LangToggle />
+        </div>
 
         <div className="flex-1 flex items-center max-w-md w-full mx-auto">
           <div className="w-full">
             <h1 className="text-[32px] font-bold leading-tight tracking-[-0.02em] text-ink-900">
-              Partner sign-in
+              {t.login.heading}
             </h1>
-            <p className="mt-2 text-[14.5px] text-ink-500">
-              Access your account to submit cases, review plans, and download
-              deliverables.
-            </p>
+            <p className="mt-2 text-[14.5px] text-ink-500">{t.login.sub}</p>
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">
               <div>
@@ -44,7 +45,7 @@ export default function LoginPage() {
                   htmlFor="email"
                   className="block text-[12.5px] font-medium text-ink-700 mb-1.5"
                 >
-                  Work email
+                  {t.login.emailLabel}
                 </label>
                 <input
                   id="email"
@@ -53,7 +54,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="username"
-                  placeholder="you@yourlab.com"
+                  placeholder={t.login.emailPlaceholder}
                   className="w-full px-3.5 py-2.5 rounded-md border border-ink-200 text-[14px] text-ink-900 placeholder:text-ink-300 focus:outline-none focus:ring-2 focus:ring-mint-500/30 focus:border-mint-500 transition-colors"
                 />
               </div>
@@ -63,13 +64,13 @@ export default function LoginPage() {
                     htmlFor="pw"
                     className="block text-[12.5px] font-medium text-ink-700"
                   >
-                    Password
+                    {t.login.pwLabel}
                   </label>
                   <a
                     href="#/login"
                     className="text-[12px] text-ink-500 hover:text-ink-800"
                   >
-                    Forgot?
+                    {t.login.forgot}
                   </a>
                 </div>
                 <input
@@ -79,21 +80,21 @@ export default function LoginPage() {
                   value={pw}
                   onChange={(e) => setPw(e.target.value)}
                   autoComplete="current-password"
-                  placeholder="••••••••"
+                  placeholder={t.login.pwPlaceholder}
                   className="w-full px-3.5 py-2.5 rounded-md border border-ink-200 text-[14px] text-ink-900 placeholder:text-ink-300 focus:outline-none focus:ring-2 focus:ring-mint-500/30 focus:border-mint-500 transition-colors"
                 />
               </div>
 
-              {error && (
+              {showError && (
                 <div className="rounded-md border border-ink-200 bg-bone px-4 py-3 text-[13px] text-ink-700">
-                  {error}{" "}
+                  {t.login.error}{" "}
                   <a
                     href="#/#contact"
                     className="font-medium text-ink-900 underline underline-offset-2"
                   >
-                    Talk to us
+                    {t.login.talkLink}
                   </a>{" "}
-                  about becoming a partner.
+                  {t.login.becomeSuffix}
                 </div>
               )}
 
@@ -102,7 +103,7 @@ export default function LoginPage() {
                 disabled={loading}
                 className="group w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-ink-900 text-white text-[14px] font-medium hover:bg-ink-800 transition-colors disabled:opacity-60"
               >
-                {loading ? "Signing in…" : "Sign in"}
+                {loading ? t.login.signingIn : t.login.signIn}
                 {!loading && (
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 )}
@@ -110,14 +111,14 @@ export default function LoginPage() {
             </form>
 
             <p className="mt-8 text-[12.5px] text-ink-500">
-              Don't have a partner account?{" "}
+              {t.login.noAccount}{" "}
               <a
                 href="#/#contact"
                 className="font-medium text-ink-900 underline underline-offset-2"
               >
-                Submit a test case
+                {t.login.submitLink}
               </a>{" "}
-              to get started.
+              {t.login.getStarted}
             </p>
           </div>
         </div>
@@ -135,17 +136,12 @@ export default function LoginPage() {
         <div className="relative" />
 
         <div className="relative max-w-md">
-          <div className="eyebrow text-mint-300">For partners</div>
+          <div className="eyebrow text-mint-300">{t.login.brandEyebrow}</div>
           <h2 className="mt-4 text-[28px] font-bold leading-tight tracking-[-0.02em]">
-            Every case, every status, every deliverable — in one place.
+            {t.login.brandHeading}
           </h2>
           <ul className="mt-8 space-y-3 text-[14px] text-ink-200">
-            {[
-              "Submit scans and prescriptions in one upload",
-              "Track status across diagnosis, design, and clinical review",
-              "Download STL stages and clinician-ready summaries",
-              "Audit trail for every clinical action",
-            ].map((s) => (
+            {t.login.brandBullets.map((s) => (
               <li key={s} className="flex items-start gap-3">
                 <span className="mt-2 h-1 w-1 rounded-full bg-mint-500 flex-shrink-0" />
                 {s}
@@ -155,7 +151,7 @@ export default function LoginPage() {
         </div>
 
         <div className="relative text-[11px] text-ink-300">
-          Trouble signing in?{" "}
+          {t.login.trouble}{" "}
           <a href="mailto:partners@aline.tech" className="text-mint-300 hover:underline">
             partners@aline.tech
           </a>

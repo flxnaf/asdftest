@@ -1,48 +1,22 @@
-const team = [
-  {
-    initials: "CD",
-    name: "Dr. [Clinical Director name]",
-    role: "Clinical Director",
-    creds: "BDS · MOrth · 15+ yr clinical orthodontics",
-    body:
-      "Oversees clinical governance and the orthodontist review board. Personally signs off on escalated cases.",
-  },
-  {
-    initials: "TP",
-    name: "Dr. [Head of Treatment Planning]",
-    role: "Head of Treatment Planning",
-    creds: "BDS · MDS Orthodontics · 8,000+ aligner cases",
-    body:
-      "Leads the treatment-planning team. Authored our internal staging protocols for deep-bite and Class II correction.",
-  },
-  {
-    initials: "SC",
-    name: "Dr. [Senior Consultant]",
-    role: "Senior Consultant — Complex Cases",
-    creds: "BDS · MSc Orthodontics · Member RCS",
-    body:
-      "Reviews cases involving skeletal discrepancies, surgical orthodontic interfaces, and adult re-treatment.",
-  },
-];
+import { useLang } from "../i18n/LangContext";
 
 export default function Team() {
+  const { t } = useLang();
   return (
     <section id="team" className="bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
         <div className="max-w-3xl">
-          <div className="eyebrow">Clinical leadership</div>
+          <div className="eyebrow">{t.team.eyebrow}</div>
           <h2 className="mt-4 text-[40px] lg:text-[52px] font-bold leading-[1.05] tracking-[-0.025em] text-ink-900">
-            A clinical team you can name.
+            {t.team.headline}
           </h2>
           <p className="mt-5 text-[16px] text-ink-500 leading-[1.6]">
-            Most aligner-design outsourcers won't tell you who's planning your
-            cases. We will. Every plan we deliver carries the signature of a named,
-            credentialled orthodontist — and you can meet them.
+            {t.team.sub}
           </p>
         </div>
 
         <div className="mt-14 grid md:grid-cols-3 gap-5">
-          {team.map((m) => (
+          {t.team.members.map((m) => (
             <article
               key={m.role}
               className="rounded-xl border border-ink-100 bg-white p-7"
@@ -68,13 +42,10 @@ export default function Team() {
 
         <div className="mt-10 rounded-xl border border-ink-100 bg-bone p-6 lg:p-7 flex flex-col md:flex-row md:items-center gap-5">
           <div className="text-[11px] tracking-widest font-semibold text-mint-500 uppercase md:w-44 flex-shrink-0">
-            Clinical governance
+            {t.team.govEyebrow}
           </div>
           <p className="text-[14px] text-ink-700 leading-[1.6]">
-            Our orthodontist review board meets weekly to audit case outcomes,
-            calibrate staging protocols, and review any case flagged for refinement.
-            Plans are signed off by the named clinician responsible — never by an
-            anonymous reviewer.
+            {t.team.govBody}
           </p>
         </div>
       </div>

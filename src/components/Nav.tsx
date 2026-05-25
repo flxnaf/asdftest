@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
-
-const links = [
-  { href: "#services", label: "Services" },
-  { href: "#cases", label: "Cases" },
-  { href: "#team", label: "Clinical team" },
-  { href: "#contact", label: "Contact" },
-];
+import LangToggle from "./LangToggle";
+import { useLang } from "../i18n/LangContext";
 
 export default function Nav() {
+  const { t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: "#services", label: t.nav.services },
+    { href: "#cases", label: t.nav.cases },
+    { href: "#team", label: t.nav.team },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -42,18 +45,19 @@ export default function Nav() {
             </a>
           ))}
         </nav>
-        <div className="hidden lg:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-4">
+          <LangToggle />
           <a
             href="#/login"
             className="text-[13.5px] font-medium text-ink-600 hover:text-ink-900 transition-colors"
           >
-            Partner login
+            {t.nav.partnerLogin}
           </a>
           <a
             href="#contact"
             className="text-[13.5px] font-medium px-4 py-2 rounded-md bg-ink-900 text-white hover:bg-ink-800 transition-colors"
           >
-            Submit a test case
+            {t.nav.submitCase}
           </a>
         </div>
         <button
@@ -84,12 +88,22 @@ export default function Nav() {
                 {l.label}
               </a>
             ))}
+            <div className="pt-2 flex items-center gap-3">
+              <LangToggle />
+              <a
+                href="#/login"
+                onClick={() => setOpen(false)}
+                className="text-sm text-ink-700"
+              >
+                {t.nav.partnerLogin}
+              </a>
+            </div>
             <a
               href="#contact"
               onClick={() => setOpen(false)}
               className="mt-2 text-center text-sm font-medium px-4 py-2.5 rounded-md bg-ink-900 text-white"
             >
-              Submit a test case
+              {t.nav.submitCase}
             </a>
           </div>
         </div>
