@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import LangToggle from "./LangToggle";
+import { UserRound } from "lucide-react";
 import { useLang } from "../i18n/LangContext";
 
 export default function Nav() {
@@ -45,14 +46,7 @@ export default function Nav() {
             </a>
           ))}
         </nav>
-        <div className="hidden lg:flex items-center gap-4">
-          <LangToggle />
-          <a
-            href="#/login"
-            className="text-[13.5px] font-medium text-ink-600 hover:text-ink-900 transition-colors"
-          >
-            {t.nav.partnerLogin}
-          </a>
+        <div className="hidden lg:flex items-center">
           <a
             href="#contact"
             className="text-[13.5px] font-medium px-4 py-2 rounded-md bg-ink-900 text-white hover:bg-ink-800 transition-colors"
@@ -88,13 +82,14 @@ export default function Nav() {
                 {l.label}
               </a>
             ))}
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-3 mt-1 border-t border-ink-100 flex items-center justify-between">
               <LangToggle />
               <a
                 href="#/login"
                 onClick={() => setOpen(false)}
-                className="text-sm text-ink-700"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-700"
               >
+                <UserRound className="w-3.5 h-3.5" strokeWidth={1.8} />
                 {t.nav.partnerLogin}
               </a>
             </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Banner from "./components/Banner";
+import TopBar from "./components/TopBar";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Process from "./components/Process";
@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-ink-900">
-      <Banner />
+      <TopBar />
       <Nav />
       <main>
         <Hero />
