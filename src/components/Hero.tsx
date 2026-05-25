@@ -3,7 +3,7 @@ import HeroVisual from "./HeroVisual";
 import { useLang } from "../i18n/LangContext";
 
 // Flip to true once /public/demo-3d.mp4 has been added
-const HAS_DEMO_VIDEO = false;
+const HAS_DEMO_VIDEO = true;
 
 export default function Hero() {
   const { t } = useLang();
