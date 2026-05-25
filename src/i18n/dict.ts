@@ -12,8 +12,7 @@ export const en = {
     submitCase: "Submit a test case",
   },
   hero: {
-    headline:
-      "Precision clear aligner treatment plans, designed under your brand.",
+    headline: "Precision clear aligner treatment plans.",
     sub: "A Line Technologies is the orthodontist-led treatment-planning partner behind aligner labs, dental clinics, and emerging aligner brands across the Asia–Pacific. We design. You manufacture. Your brand stays front.",
     ctaSubmit: "Submit a test case",
     ctaProcess: "See how it works",
@@ -206,7 +205,7 @@ export const zh: typeof en = {
     submitCase: "提交試做個案",
   },
   hero: {
-    headline: "精準隱形牙箍治療方案，以您的品牌呈現。",
+    headline: "精準隱形牙箍治療方案。",
     sub: "A Line Technologies 是亞太區隱形牙箍實驗室、牙科診所及新興品牌背後的治療方案設計夥伴，由矯齒科醫生主導。我們負責設計，您負責生產，品牌永遠是您的。",
     ctaSubmit: "提交試做個案",
     ctaProcess: "了解流程",
