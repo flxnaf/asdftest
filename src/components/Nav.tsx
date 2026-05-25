@@ -42,7 +42,13 @@ export default function Nav() {
             </a>
           ))}
         </nav>
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center gap-5">
+          <a
+            href="#/login"
+            className="text-[13.5px] font-medium text-ink-600 hover:text-ink-900 transition-colors"
+          >
+            Partner login
+          </a>
           <a
             href="#contact"
             className="text-[13.5px] font-medium px-4 py-2 rounded-md bg-ink-900 text-white hover:bg-ink-800 transition-colors"
